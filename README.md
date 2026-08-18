@@ -2,5 +2,9 @@
 
 2TDSPS-2026-AG EM FLUTTER
 
+Aula de Hoje : 10/08/2026
 
-Aula de Hoje : 10/080/2026
+- [X] Introdução ao Dart
+- [X] Olá Mundo !
+- [X] Variáveis
+- [ ] Funções
