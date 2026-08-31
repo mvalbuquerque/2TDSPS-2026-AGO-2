@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funções — Conteúdo</title>
+<link rel="stylesheet" href="../../assets/lesson.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow">Mobile App Development · Dart/Flutter</p>
+    <h1>03 · Funções</h1>
+    <p class="lede">Como criar e usar funções em Dart: parâmetros posicionais e nomeados, valores padrão, retorno e arrow functions.</p>
+    <nav class="trail">
+      <span class="current">Conteúdo</span>
+      <a href="../02-Exercicios/funcoes.html">Exercícios</a>
+      <a href="../03-Desafios/funcoes.html">Desafios</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2><span class="num">1</span>Objetivo da aula</h2>
+    <p>Aprender a criar e usar funções em Dart para organizar o código, evitar repetição, separar responsabilidades e deixar o programa mais fácil de ler, testar e manter. Ao final desta aula, você deve conseguir declarar funções com e sem retorno, enviar informações usando parâmetros posicionais, nomeados e com valores padrão, criar funções curtas com arrow function e reaproveitar funções em exercícios e desafios práticos.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>O que vamos aprender</h2>
+    <div class="concepts">
+      <div class="concept">
+        <code>void minhaFuncao() { }</code>
+        <p>Função sem retorno: executa uma ação (como imprimir algo) mas não devolve nenhum valor para quem chamou.</p>
+      </div>
+      <div class="concept">
+        <code>saudar(String nome)</code>
+        <p>Parâmetro posicional: envia dados para dentro da função na ordem em que são declarados.</p>
+      </div>
+      <div class="concept">
+        <code>int somar(...) { return ...; }</code>
+        <p>Função com retorno: o tipo antes do nome indica o que ela devolve, e <code>return</code> envia o resultado para quem chamou.</p>
+      </div>
+      <div class="concept">
+        <code>{required String nome}</code>
+        <p>Parâmetros nomeados: declarados entre chaves <code>{}</code>, deixam a chamada da função mais legível. <code>required</code> torna o parâmetro obrigatório.</p>
+      </div>
+      <div class="concept">
+        <code>{String prefixo = 'Info'}</code>
+        <p>Valores padrão: um parâmetro nomeado com valor padrão se torna opcional — se omitido na chamada, usa esse valor.</p>
+      </div>
+      <div class="concept">
+        <code>int dobrar(int n) =&gt; n * 2;</code>
+        <p>Arrow function: forma curta para funções com apenas uma expressão. O <code>=&gt;</code> retorna automaticamente o resultado.</p>
+      </div>
+      <div class="concept">
+        <code>void Function() acao</code>
+        <p>Funções como valores: uma função pode ser armazenada em uma variável ou passada como argumento para outra função — muito comum em callbacks do Flutter.</p>
+      </div>
+      <div class="concept">
+        <code>numeros.map((n) =&gt; dobrar(n))</code>
+        <p>Uma função pode ser usada dentro de outra função de coleção, como <code>map()</code>, para transformar cada item de uma lista.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Exemplo comentado</h2>
+    <pre class="code"><code>void main() {
+  exibirBoasVindas();
+
+  final soma = somar(8, 4);
+  print('Soma: $soma');
+
+  final saudacao = montarSaudacao(nome: 'Ana', cidade: 'São Paulo');
+  print(saudacao);
+
+  final numeros = [1, 2, 3, 4, 5];
+  final dobrados = numeros.map((n) =&gt; dobrar(n)).toList();
+  print('Dobro: $dobrados');
+}
+
+void exibirBoasVindas() {
+  print('Bem-vindo(a) à aula de funções!');
+}
+
+int somar(int a, int b) {
+  return a + b;
+}
+
+String montarSaudacao({required String nome, required String cidade}) {
+  return 'Olá, $nome! Você está em $cidade.';
+}
+
+int dobrar(int numero) =&gt; numero * 2;</code></pre>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Saída esperada</h2>
+    <pre class="output">Bem-vindo(a) à aula de funções!
+Soma: 12
+Olá, Ana! Você está em São Paulo.
+Dobro: [2, 4, 6, 8, 10]</pre>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Do conteúdo para a prática</h2>
+    <div class="practice-grid">
+      <a class="practice" href="../02-Exercicios/funcoes.html">
+        <span class="kind">Exercício</span>
+        <span class="file">9 exercícios</span>
+        <p class="desc">Da função sem retorno até parâmetros nomeados, valores padrão e arrow functions, com três exemplos extras de reforço.</p>
+      </a>
+      <a class="practice" href="../03-Desafios/funcoes.html">
+        <span class="kind">Desafios</span>
+        <span class="file">3 desafios</span>
+        <p class="desc">Uma calculadora de pedidos, um boletim escolar e o cálculo da média de uma lista de notas, todos com funções encadeadas.</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Prática sugerida</h2>
+    <ul class="checklist">
+      <li>Criei uma função <code>void</code>.</li>
+      <li>Criei uma função com retorno.</li>
+      <li>Usei parâmetros posicionais.</li>
+      <li>Usei parâmetros nomeados.</li>
+      <li>Usei valores padrão.</li>
+      <li>Usei arrow function.</li>
+      <li>Executei os arquivos pelo terminal com <code>dart run</code>.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>💻 Divirta-se!</p>
+    <p>🏫 Profº <a href="http://www.linkedin.com/in/mvalbuquerque">Vinny Albuquerque</a></p>
+    <p>✉️ profvinny.albuquerque@fiap.com.br</p>
+    <p>© <a href="http://www.linkedin.com/in/mvalbuquerque">@mvalbuquerque</a></p>
+  </footer>
+
+</div>
+<script src="../../assets/lesson.js"></script>
+</body>
+</html>

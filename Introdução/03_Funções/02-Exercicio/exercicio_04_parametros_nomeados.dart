@@ -16,5 +16,5 @@ void exibirPerfil({
 void main() {
   // Ao chamar, os parâmetros nomeados podem ser passados em qualquer ordem.
   // O nome do parâmetro deve ser informado explicitamente: nome: 'Bia'.
-  exibirPerfil(nome: 'Vinny', idade: 44, cidade: 'Ribeirão Pires');
+  exibirPerfil(nome: 'Bia', idade: 27, cidade: 'Recife');
 }

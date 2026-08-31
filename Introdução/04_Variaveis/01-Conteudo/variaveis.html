@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Variáveis — Conteúdo</title>
+<link rel="stylesheet" href="../../assets/lesson.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow">Mobile App Development · Dart/Flutter</p>
+    <h1>04 · Variáveis</h1>
+    <p class="lede">Declare variáveis com tipos explícitos e com <code>var</code>, entenda quando usar <code>final</code> e <code>const</code>, e monte textos com interpolação de string.</p>
+    <nav class="trail">
+      <span class="current">Conteúdo</span>
+      <a href="../02_Exercicios/variaveis.html">Exercícios</a>
+      <a href="../03_Desafios/variaveis.html">Desafios</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2><span class="num">1</span>Objetivo da aula</h2>
+    <p>Nesta aula você vai declarar variáveis com tipos explícitos e com <code>var</code>, entender quando usar <code>final</code> e <code>const</code>, formatar textos com interpolação de string e converter valores entre <code>String</code>, <code>int</code> e <code>double</code>.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>O que vamos aprender</h2>
+    <div class="concepts">
+      <div class="concept">
+        <code>var</code>
+        <p>Variável cujo tipo é inferido a partir do valor inicial atribuído. O tipo fica fixo depois disso.</p>
+      </div>
+      <div class="concept">
+        <code>final</code>
+        <p>Recebe um valor uma única vez. Use quando o dado não muda durante a execução (nome, curso).</p>
+      </div>
+      <div class="concept">
+        <code>const</code>
+        <p>Constante conhecida em tempo de compilação. Mais restritiva que <code>final</code>: o valor já precisa ser conhecido antes do programa rodar.</p>
+      </div>
+      <div class="concept">
+        <code>int</code> · <code>double</code> · <code>String</code> · <code>bool</code>
+        <p>Os tipos básicos: números inteiros, números com casas decimais, texto e valores verdadeiro/falso.</p>
+      </div>
+      <div class="concept">
+        <code>'texto $var'</code>
+        <p>Interpolação de string: insere o valor de uma variável dentro de um texto sem concatenar com <code>+</code>.</p>
+      </div>
+      <div class="concept">
+        <code>'${expr}'</code>
+        <p>Quando a interpolação envolve uma expressão ou chamada de método, envolva com chaves.</p>
+      </div>
+      <div class="concept">
+        <code>int.parse</code> / <code>double.parse</code>
+        <p>Convertem uma <code>String</code> em número. Lançam <code>FormatException</code> se o texto não for válido.</p>
+      </div>
+      <div class="concept">
+        <code>toStringAsFixed(2)</code>
+        <p>Formata um <code>double</code> com um número fixo de casas decimais, útil para valores monetários.</p>
+      </div>
+      <div class="concept">
+        <code>String?</code>
+        <p>Tipo anulável: aceita um valor do tipo declarado ou <code>null</code>. Sem o <code>?</code>, Dart não permite <code>null</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Exemplo comentado</h2>
+    <pre class="code"><code>// Exemplo: declarar variáveis com tipos diferentes, usar interpolação
+// e distinguir 'var' (mutável), 'final' e 'const' (imutáveis).
+void main() {
+  // 'var' porque o nome poderia ser reatribuído mais adiante.
+  var nome = 'Vinny';
+  // Tipos explícitos deixam claro o que cada variável armazena.
+  int idade = 40;
+  double altura = 1.69;
+  bool alunoAtivo = true;
+
+  // 'final' porque o curso não muda depois de definido.
+  final curso = 'Dart/Flutter';
+  // 'const' porque a carga horária é uma constante conhecida em tempo de compilação.
+  const cargaHoraria = 80;
+
+  // Reatribuição possível porque 'idade' foi declarada com tipo explícito (mutável).
+  idade = idade + 1;
+
+  print('Nome: $nome');
+  print('Idade: $idade');
+  // toStringAsFixed(2) formata o double com duas casas decimais.
+  print('Altura: ${altura.toStringAsFixed(2)}');
+  print('Aluno ativo: $alunoAtivo');
+  print('Curso: $curso | Carga horária: $cargaHoraria h');
+}</code></pre>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Saída esperada</h2>
+    <pre class="output">Nome: Vinny
+Idade: 41
+Altura: 1.69
+Aluno ativo: true
+Curso: Dart/Flutter | Carga horária: 80 h</pre>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Do conteúdo para a prática</h2>
+    <div class="practice-grid">
+      <a class="practice" href="../02_Exercicios/variaveis.html">
+        <span class="kind">Exercícios</span>
+        <span class="file">6 exercícios</span>
+        <p class="desc">Pratique tipos básicos, inferência com <code>var</code>, <code>final</code>/<code>const</code>, interpolação, conversões e variáveis nullable.</p>
+      </a>
+      <a class="practice" href="../03_Desafios/variaveis.html">
+        <span class="kind">Desafios</span>
+        <span class="file">2 desafios</span>
+        <p class="desc">Monte a ficha de um aluno e o resumo de uma compra combinando os tipos e a interpolação vistos na aula.</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Prática sugerida</h2>
+    <ul class="checklist">
+      <li>Declare <code>nomeProduto</code>, <code>preco</code> e <code>quantidade</code> e calcule o total da compra.</li>
+      <li>Troque <code>var</code> por tipos explícitos e compare a legibilidade do código.</li>
+      <li>Use <code>final</code> para um dado que não muda e <code>const</code> para uma constante conhecida em compilação.</li>
+      <li>Converta um texto para número com <code>int.parse</code> ou <code>double.parse</code>.</li>
+      <li>Declare uma variável <code>String?</code> e mostre seu valor antes e depois de receber um apelido.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>💻 Divirta-se!</p>
+    <p>🏫 Profº <a href="http://www.linkedin.com/in/mvalbuquerque">Vinny Albuquerque</a></p>
+    <p>✉️ profvinny.albuquerque@fiap.com.br</p>
+    <p>© <a href="http://www.linkedin.com/in/mvalbuquerque">@mvalbuquerque</a></p>
+  </footer>
+
+</div>
+<script src="../../assets/lesson.js"></script>
+</body>
+</html>
