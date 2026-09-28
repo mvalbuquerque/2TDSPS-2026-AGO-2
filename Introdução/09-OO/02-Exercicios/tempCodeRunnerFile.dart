@@ -1,1 +1,0 @@
-Pessoa pessoa = Pessoa('Vinny', 44);
