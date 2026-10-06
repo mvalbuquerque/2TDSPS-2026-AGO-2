@@ -1,6 +1,5 @@
 //Criar um objeto simples usando Map.
 //Cada informação do produto fica em um par de chave/valor 
-
 void main() {
   final caneta = {
     //Nome do PRODUTO 
