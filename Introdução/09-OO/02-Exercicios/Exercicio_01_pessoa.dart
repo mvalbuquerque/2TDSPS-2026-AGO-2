@@ -19,9 +19,9 @@ class Pessoa {
 }
   //Rodou o programa
   void main() {
-    // //Cria um objeto (instancia) da classe Pessoa com os valores fornecidos. 
+    
      Pessoa pessoa = Pessoa('Vinny', 44);
-    //   //Chamar o método 'apresentar' no objeto criado. 
+   
     pessoa.apresentar();
     print('passou aqui');
 }
